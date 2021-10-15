@@ -1,16 +1,16 @@
 import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class Instrutor extends Pessoa {
 	
 	private String nTelemovel;
 	private ArrayList<Especialidade> listaEspecialidade = new ArrayList<>();
 	
-	public Instrutor(String nome,String dataNascimento, String genero,String ntelemovel,ArrayList<Especialidade> listaEspecialidade) {
+	public Instrutor(String nome,LocalDate dataNascimento, String genero,String ntelemovel,ArrayList<Especialidade> listaEspecialidade) {
 		super(nome,dataNascimento,genero);
 		setContacto(ntelemovel);
 		if(listaEspecialidade.size()>=4)
-			setListaEspecialidade(listaEspecialidade);
-			
+			setListaEspecialidade(listaEspecialidade);	
 	}
 
 	@Override
@@ -21,10 +21,7 @@ public class Instrutor extends Pessoa {
 	@Override
 	public void setContacto(String ntelemovel) {
 		this.nTelemovel = ntelemovel;
-
 	}
-
-	
 	public void setListaEspecialidade(ArrayList<Especialidade> listaEsp) {
 		this.listaEspecialidade=listaEsp;
 	}

@@ -8,7 +8,7 @@ public class Aula {
 	private Date dataInicio, dataFim;
 	private Especialidade esp;
 	private Instrutor inst;
-	private int nMaxCliente;
+	private Integer nMaxCliente;
 	private ArrayList<Cliente> listacliente = new ArrayList<>();
 	
 	public Aula ( Date dataInicio, Date dataFim, LocalTime horaInicio, Especialidade esp, Instrutor inst, ArrayList<Cliente> listacliente) {
