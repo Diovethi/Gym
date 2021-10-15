@@ -1,13 +1,17 @@
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
+
 
 public class Aula {
-	private String dataInicio, dataFim, horaInicio;
+	private LocalTime horaInicio;
+	private Date dataInicio, dataFim;
 	private Especialidade esp;
 	private Instrutor inst;
 	private int nMaxCliente;
 	private ArrayList<Cliente> listacliente = new ArrayList<>();
 	
-	public Aula (String dataInicio,String dataFim,String horaInicio,Especialidade esp, Instrutor inst, ArrayList<Cliente> listacliente) {
+	public Aula ( Date dataInicio, Date dataFim, LocalTime horaInicio, Especialidade esp, Instrutor inst, ArrayList<Cliente> listacliente) {
 		setDataInicio(dataInicio);
 		setDataFim(dataFim);
 		setEsp(esp);
@@ -15,16 +19,17 @@ public class Aula {
 		setListacliente(listacliente);
 		setHoraInicio(horaInicio);
 	}
-	public String getDataInicio() {
+
+	public Date getDataInicio() {
 		return dataInicio;
 	}
-	public void setDataInicio(String dataInicio) {
+	public void setDataInicio(Date dataInicio) {
 		this.dataInicio = dataInicio;
 	}
-	public String getDataFim() {
+	public Date getDataFim() {
 		return dataFim;
 	}
-	public void setDataFim(String dataFim) {
+	public void setDataFim(Date dataFim) {
 		this.dataFim = dataFim;
 	}
 	public Especialidade getEsp() {
@@ -51,10 +56,10 @@ public class Aula {
 	public void setnMaxCliente(int nMaxCliente) {
 		this.nMaxCliente = nMaxCliente;
 	}
-	public String getHoraInicio() {
+	public LocalTime getHoraInicio() {
 		return horaInicio;
 	}
-	public void setHoraInicio(String horaInicio) {
+	public void setHoraInicio(LocalTime horaInicio) {
 		this.horaInicio = horaInicio;
 	}
 	
