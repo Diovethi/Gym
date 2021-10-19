@@ -21,13 +21,9 @@ public class Main {
 
 			Aula aulaMusculacao= new Aula("19-10-2021", "19-10-2021", "14:30:00", espLista.get(1), inst1, clienteLista,3 );
 
-			
-
 			System.out.println(aulaMusculacao.isFull()+" ");
 			System.out.println(clienteLista.get(0).getNome()+" "+clienteLista.get(0).getContacto());
 			System.out.println(inst1.getNome()+" "+inst1.getContacto());
-			
-			
 			
 			
 		}catch(IllegalArgumentException ie) {
