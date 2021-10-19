@@ -8,15 +8,17 @@ public class Aula {
 	private ArrayList<Cliente> listacliente = new ArrayList<>();
 	
 	public Aula (String dataInicio,String dataFim,String horaInicio,Especialidade esp, Instrutor inst, ArrayList<Cliente> listacliente,Integer nMaxCliente) {
-			if(isMaxClientes(nMaxCliente,listacliente)){
-				setDataInicio(dataInicio);
-				setDataFim(dataFim);
-				setEsp(esp);
-				setInst(inst);
-				setListacliente(listacliente);
-				setHoraInicio(horaInicio);
-				
-			}
+		if(isMaxClientes(nMaxCliente,listacliente)){
+			setDataInicio(dataInicio);
+			setDataFim(dataFim);
+			setEsp(esp);
+			setInst(inst);
+			setListacliente(listacliente);
+			setHoraInicio(horaInicio);
+			
+			//este é só para teste
+			
+		}
 	}
 	public String getDataInicio() {
 		return dataInicio;
