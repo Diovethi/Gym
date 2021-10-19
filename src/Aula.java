@@ -4,16 +4,18 @@ public class Aula {
 	private String dataInicio, dataFim, horaInicio;
 	private Especialidade esp;
 	private Instrutor inst;
-	private int nMaxCliente;
+	private Integer nMaxCliente;
 	private ArrayList<Cliente> listacliente = new ArrayList<>();
 	
-	public Aula (String dataInicio,String dataFim,String horaInicio,Especialidade esp, Instrutor inst, ArrayList<Cliente> listacliente) {
-		setDataInicio(dataInicio);
-		setDataFim(dataFim);
-		setEsp(esp);
-		setInst(inst);
-		setListacliente(listacliente);
-		setHoraInicio(horaInicio);
+	public Aula (String dataInicio,String dataFim,String horaInicio,Especialidade esp, Instrutor inst, ArrayList<Cliente> listacliente,Integer nMaxCliente) {
+			if(isMaxClientes(nMaxCliente,listacliente)){
+				setDataInicio(dataInicio);
+				setDataFim(dataFim);
+				setEsp(esp);
+				setInst(inst);
+				setListacliente(listacliente);
+				setHoraInicio(horaInicio);
+			}
 	}
 	public String getDataInicio() {
 		return dataInicio;
@@ -43,12 +45,13 @@ public class Aula {
 		return listacliente;
 	}
 	public void setListacliente(ArrayList<Cliente> listacliente) {
+		if(isMaxClientes(this.nMaxCliente,listacliente))
 		this.listacliente = listacliente;
 	}
-	public int getnMaxCliente() {
+	public Integer getnMaxCliente() {
 		return nMaxCliente;
 	}
-	public void setnMaxCliente(int nMaxCliente) {
+	public void setnMaxCliente(Integer nMaxCliente) {
 		this.nMaxCliente = nMaxCliente;
 	}
 	public String getHoraInicio() {
@@ -56,6 +59,14 @@ public class Aula {
 	}
 	public void setHoraInicio(String horaInicio) {
 		this.horaInicio = horaInicio;
+	}
+
+	private boolean isMaxClientes(Integer nMaxCliente, ArrayList<Cliente> listacliente){
+		return (listacliente.size() >= nMaxCliente || nMaxCliente!=null);
+	}
+
+	public boolean isFull(){
+		return isMaxClientes(this.nMaxCliente,this.listacliente);
 	}
 	
 }

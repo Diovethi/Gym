@@ -3,17 +3,28 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		try {
 			ArrayList<Especialidade> espLista= new ArrayList<>();
 			espLista.add(new Especialidade("Cardio","00:35:00"));
-			espLista.add(new Especialidade("Musculação","00:40:00"));
+			espLista.add(new Especialidade("Musculaï¿½ï¿½o","00:40:00"));
 			espLista.add(new Especialidade("Velocidade","00:30:00"));
 			espLista.add(new Especialidade("Resistencia","01:15:00"));
-			
-			Cliente cliente1= new Cliente("João","13-05-1978","Masculino","teste@teste.com", espLista.get(1));
+
 			Instrutor inst1= new Instrutor("Roberta","26-10-1989","Femenino","936191001",espLista);
-			System.out.println(cliente1.getNome()+" "+cliente1.getContacto());
+
+			ArrayList<Cliente> clienteLista= new ArrayList<>();
+			clienteLista.add(new Cliente("Joao","13-05-1978","Masculino","teste@teste.com", espLista.get(1)));
+			clienteLista.add(new Cliente("Rodolfo","05-03-1998","Masculino","rodolfo@joka.pt", espLista.get(3)));
+			clienteLista.add(new Cliente("Roberta","23-10-1958","Masculino","Roberta@joka.com", espLista.get(2)));
+			clienteLista.add(new Cliente("Joao","13-05-1978","Masculino","teste@teste.com", espLista.get(0)));
+
+			Aula aulaMusculacao= new Aula("19-10-2021", "19-10-2021", "14:30:00", espLista.get(1), inst1, clienteLista,3 );
+
+			
+
+			System.out.println(aulaMusculacao.isFull()+" ");
+			System.out.println(clienteLista.get(0).getNome()+" "+clienteLista.get(0).getContacto());
 			System.out.println(inst1.getNome()+" "+inst1.getContacto());
 			
 			
