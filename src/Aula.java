@@ -15,6 +15,7 @@ public class Aula {
 				setInst(inst);
 				setListacliente(listacliente);
 				setHoraInicio(horaInicio);
+				
 			}
 	}
 	public String getDataInicio() {
