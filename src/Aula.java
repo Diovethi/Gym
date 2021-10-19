@@ -16,8 +16,6 @@ public class Aula {
 			setListacliente(listacliente);
 			setHoraInicio(horaInicio);
 			
-			//este é só para teste
-			
 		}
 	}
 	public String getDataInicio() {
