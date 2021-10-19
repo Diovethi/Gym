@@ -6,11 +6,9 @@ public class Aula {
 	private Instrutor inst;
 	private Integer nMaxCliente;
 	private ArrayList<Cliente> listacliente = new ArrayList<>();
-	
-	//teste 1\3456768789'
 
 	public Aula (String dataInicio,String dataFim,String horaInicio,Especialidade esp, Instrutor inst, ArrayList<Cliente> listacliente,Integer nMaxCliente) {
-		if(isMaxClientes(nMaxCliente,listacliente)){
+		if(isMaxCliente(nMaxCliente,listacliente)){
 			setDataInicio(dataInicio);
 			setDataFim(dataFim);
 			setEsp(esp);
@@ -64,12 +62,12 @@ public class Aula {
 		this.horaInicio = horaInicio;
 	}
 
-	private boolean isMaxClientes(Integer nMaxCliente, ArrayList<Cliente> listacliente){
+	private boolean isMaxCliente(Integer nMaxCliente, ArrayList<Cliente> listacliente){
 		return (listacliente.size() >= nMaxCliente || nMaxCliente!=null);
 	}
 
 	public boolean isFull(){
-		return isMaxClientes(this.nMaxCliente,this.listacliente);
+		return isMaxCliente(this.nMaxCliente,this.listacliente);
 	}
 	
 }

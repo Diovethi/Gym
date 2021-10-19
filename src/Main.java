@@ -13,6 +13,7 @@ public class Main {
 
 			Instrutor inst1= new Instrutor("Roberta","26-10-1989","Femenino","936191001",espLista);
 
+
 			ArrayList<Cliente> clienteLista= new ArrayList<>();
 			clienteLista.add(new Cliente("Joao","13-05-1978","Masculino","teste@teste.com", espLista.get(1)));
 			clienteLista.add(new Cliente("Rodolfo","05-03-1998","Masculino","rodolfo@joka.pt", espLista.get(3)));
