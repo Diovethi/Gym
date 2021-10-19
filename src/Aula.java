@@ -7,6 +7,8 @@ public class Aula {
 	private Integer nMaxCliente;
 	private ArrayList<Cliente> listacliente = new ArrayList<>();
 	
+	//teste 1\3456768789'
+
 	public Aula (String dataInicio,String dataFim,String horaInicio,Especialidade esp, Instrutor inst, ArrayList<Cliente> listacliente,Integer nMaxCliente) {
 		if(isMaxClientes(nMaxCliente,listacliente)){
 			setDataInicio(dataInicio);
