@@ -4,21 +4,22 @@ public class Aula {
 	private String dataInicio, dataFim, horaInicio;
 	private Especialidade esp;
 	private Instrutor inst;
-	private Integer nMaxCliente;
-	private ArrayList<Cliente> listacliente = new ArrayList<>();
+	private int nMaxCliente;
+	private ArrayList<Cliente> listacliente;
 	
-	//teste 1\3456768789'
-
-	public Aula (String dataInicio,String dataFim,String horaInicio,Especialidade esp, Instrutor inst, ArrayList<Cliente> listacliente,Integer nMaxCliente) {
-		if(isMaxClientes(nMaxCliente,listacliente)){
+	public Aula (String dataInicio,String dataFim,String horaInicio,Especialidade esp, Instrutor inst, ArrayList<Cliente> listaclientes,int nMaxCliente) {
+	
+		if(!isMorethanMaxClients(nMaxCliente , listaclientes)){
 			setDataInicio(dataInicio);
 			setDataFim(dataFim);
-			setEsp(esp);
-			setInst(inst);
-			setListacliente(listacliente);
+			setEspecialidade(esp);
+			setInstrutor(inst);
+			setListaCliente(listaclientes);
 			setHoraInicio(horaInicio);
 			
 		}
+		else
+			throw new IllegalArgumentException("Está a ser inserido demasiados clientes para a capacidade máxima da aula");
 	}
 	public String getDataInicio() {
 		return dataInicio;
@@ -32,29 +33,39 @@ public class Aula {
 	public void setDataFim(String dataFim) {
 		this.dataFim = dataFim;
 	}
-	public Especialidade getEsp() {
+	public Especialidade getEspecialidade() {
 		return esp;
 	}
-	public void setEsp(Especialidade esp) {
+	public void setEspecialidade(Especialidade esp) {
 		this.esp = esp;
 	}
-	public Instrutor getInst() {
+	public Instrutor getInstrutor() {
 		return inst;
 	}
-	public void setInst(Instrutor inst) {
+	public void setInstrutor(Instrutor inst) {
 		this.inst = inst;
 	}
-	public ArrayList<Cliente> getListacliente() {
+	public ArrayList<Cliente> getListaCliente() {
 		return listacliente;
 	}
-	public void setListacliente(ArrayList<Cliente> listacliente) {
-		if(isMaxClientes(this.nMaxCliente,listacliente))
-		this.listacliente = listacliente;
+
+	public void setListaCliente(ArrayList<Cliente> listacliente) {
+		if(isMorethanMaxClients(this.nMaxCliente,listacliente))
+			this.listacliente = listacliente;
+		else
+			throw new IllegalArgumentException("Está a ser inserido demasiados clientes para a capacidade máxima da aula");
 	}
-	public Integer getnMaxCliente() {
+	public void addCliente(Cliente cliente){
+		if(!isFull())
+			listacliente.add(cliente);
+		else
+			throw new IllegalArgumentException("A aula já está cheia.");
+	}
+	
+	public int getnMaxCliente() {
 		return nMaxCliente;
 	}
-	public void setnMaxCliente(Integer nMaxCliente) {
+	public void setnMaxCliente(int nMaxCliente) {
 		this.nMaxCliente = nMaxCliente;
 	}
 	public String getHoraInicio() {
@@ -64,12 +75,13 @@ public class Aula {
 		this.horaInicio = horaInicio;
 	}
 
-	private boolean isMaxClientes(Integer nMaxCliente, ArrayList<Cliente> listacliente){
-		return (listacliente.size() >= nMaxCliente || nMaxCliente!=null);
+	private boolean isMorethanMaxClients(int nMaxCliente, ArrayList<Cliente> listaclientes){
+		return (listaclientes.size() > nMaxCliente );
+
 	}
 
 	public boolean isFull(){
-		return isMaxClientes(this.nMaxCliente,this.listacliente);
+		return ( this.nMaxCliente == listacliente.size());
 	}
 	
 }

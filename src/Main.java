@@ -5,7 +5,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		try {
-			ArrayList<Especialidade> espLista= new ArrayList<>();
+			ArrayList<Especialidade> espLista= new ArrayList<Especialidade>();
 			espLista.add(new Especialidade("Cardio","00:35:00"));
 			espLista.add(new Especialidade("Muscula��o","00:40:00"));
 			espLista.add(new Especialidade("Velocidade","00:30:00"));
@@ -13,18 +13,18 @@ public class Main {
 
 			Instrutor inst1= new Instrutor("Roberta","26-10-1989","Femenino","936191001",espLista);
 
-			ArrayList<Cliente> clienteLista= new ArrayList<>();
+			ArrayList<Cliente> clienteLista= new ArrayList<Cliente>();
 			clienteLista.add(new Cliente("Joao","13-05-1978","Masculino","teste@teste.com", espLista.get(1)));
 			clienteLista.add(new Cliente("Rodolfo","05-03-1998","Masculino","rodolfo@joka.pt", espLista.get(3)));
-			clienteLista.add(new Cliente("Roberta","23-10-1958","Masculino","Roberta@joka.com", espLista.get(2)));
+			clienteLista.add(new Cliente("Roberta","23-10-1958","Feminino","Roberta@joka.com", espLista.get(2)));
 			clienteLista.add(new Cliente("Joao","13-05-1978","Masculino","teste@teste.com", espLista.get(0)));
 
-			Aula aulaMusculacao= new Aula("19-10-2021", "19-10-2021", "14:30:00", espLista.get(1), inst1, clienteLista,3 );
+			Aula aulaMusculacao= new Aula("19-10-2021", "19-10-2021", "14:30:00", espLista.get(1), inst1, clienteLista,4 );
+			//aulaMusculacao.addCliente(new Cliente("Joao","13-05-1978","Masculino","teste@teste.com", espLista.get(0)));
 
-			System.out.println(aulaMusculacao.isFull()+" ");
-			System.out.println(clienteLista.get(0).getNome()+" "+clienteLista.get(0).getContacto());
-			System.out.println(inst1.getNome()+" "+inst1.getContacto());
-			
+
+			System.out.println(aulaMusculacao.getListaCliente()+" \n "+aulaMusculacao.getInstrutor()+" "+aulaMusculacao.getListaCliente().size());
+
 			
 		}catch(IllegalArgumentException ie) {
 			System.out.println(ie.getMessage());
