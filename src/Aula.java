@@ -4,20 +4,12 @@ public class Aula {
 	private String dataInicio, dataFim, horaInicio;
 	private Especialidade esp;
 	private Instrutor inst;
-<<<<<<< HEAD
 	private int nMaxCliente;
 	private ArrayList<Cliente> listacliente;
 	
 	public Aula (String dataInicio,String dataFim,String horaInicio,Especialidade esp, Instrutor inst, ArrayList<Cliente> listaclientes,int nMaxCliente) {
 	
 		if(!isMorethanMaxClients(nMaxCliente , listaclientes)){
-=======
-	private Integer nMaxCliente;
-	private ArrayList<Cliente> listacliente = new ArrayList<>();
-
-	public Aula (String dataInicio,String dataFim,String horaInicio,Especialidade esp, Instrutor inst, ArrayList<Cliente> listacliente,Integer nMaxCliente) {
-		if(isMaxCliente(nMaxCliente,listacliente)){
->>>>>>> e7b6be29af61de2f544c0192d4908d31b3d629fd
 			setDataInicio(dataInicio);
 			setDataFim(dataFim);
 			setEspecialidade(esp);
@@ -83,7 +75,6 @@ public class Aula {
 		this.horaInicio = horaInicio;
 	}
 
-<<<<<<< HEAD
 	private boolean isMorethanMaxClients(int nMaxCliente, ArrayList<Cliente> listaclientes){
 		return (listaclientes.size() > nMaxCliente );
 
@@ -91,14 +82,6 @@ public class Aula {
 
 	public boolean isFull(){
 		return ( this.nMaxCliente == listacliente.size());
-=======
-	private boolean isMaxCliente(Integer nMaxCliente, ArrayList<Cliente> listacliente){
-		return (listacliente.size() >= nMaxCliente || nMaxCliente!=null);
-	}
-
-	public boolean isFull(){
-		return isMaxCliente(this.nMaxCliente,this.listacliente);
->>>>>>> e7b6be29af61de2f544c0192d4908d31b3d629fd
 	}
 	
 }
