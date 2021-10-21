@@ -1,13 +1,16 @@
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Aula {
-	private String dataInicio, dataFim, horaInicio;
+	private LocalDate dataInicio, dataFim;
+	private LocalTime  horaInicio;
 	private Especialidade esp;
 	private Instrutor inst;
 	private int nMaxCliente;
 	private ArrayList<Cliente> listacliente;
 	
-	public Aula (String dataInicio,String dataFim,String horaInicio,Especialidade esp, Instrutor inst, ArrayList<Cliente> listaclientes,int nMaxCliente) {
+	public Aula (LocalDate dataInicio,LocalDate dataFim,LocalTime horaInicio,Especialidade esp, Instrutor inst, ArrayList<Cliente> listaclientes,int nMaxCliente) {
 	
 		if(!isMorethanMaxClients(nMaxCliente , listaclientes)){
 			setDataInicio(dataInicio);
@@ -21,16 +24,16 @@ public class Aula {
 		else
 			throw new IllegalArgumentException("Está a ser inserido demasiados clientes para a capacidade máxima da aula");
 	}
-	public String getDataInicio() {
+	public 	LocalDate getDataInicio() {
 		return dataInicio;
 	}
-	public void setDataInicio(String dataInicio) {
+	public void setDataInicio(LocalDate dataInicio) {
 		this.dataInicio = dataInicio;
 	}
-	public String getDataFim() {
+	public LocalDate getDataFim() {
 		return dataFim;
 	}
-	public void setDataFim(String dataFim) {
+	public void setDataFim(LocalDate dataFim) {
 		this.dataFim = dataFim;
 	}
 	public Especialidade getEspecialidade() {
@@ -68,10 +71,10 @@ public class Aula {
 	public void setnMaxCliente(int nMaxCliente) {
 		this.nMaxCliente = nMaxCliente;
 	}
-	public String getHoraInicio() {
+	public LocalTime getHoraInicio() {
 		return horaInicio;
 	}
-	public void setHoraInicio(String horaInicio) {
+	public void setHoraInicio(LocalTime horaInicio) {
 		this.horaInicio = horaInicio;
 	}
 

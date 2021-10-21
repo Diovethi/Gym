@@ -1,9 +1,10 @@
+import java.time.LocalTime;
 
 public class Especialidade {
 	private String nome;
-	private String duracao;
+	private LocalTime duracao;
 	
-	public Especialidade(String nome, String duracao) {
+	public Especialidade(String nome, LocalTime duracao) {
 		setNome(nome);
 		setDuracao(duracao);
 	}
@@ -14,10 +15,10 @@ public class Especialidade {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getDuracao() {
+	public LocalTime getDuracao() {
 		return duracao;
 	}
-	public void setDuracao(String duracao) {
+	public void setDuracao(LocalTime duracao) {
 		this.duracao = duracao;
 	}
 	

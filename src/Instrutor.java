@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Instrutor extends Pessoa {
@@ -5,7 +6,7 @@ public class Instrutor extends Pessoa {
 	private String nTelemovel;
 	private ArrayList<Especialidade> listaEspecialidade = new ArrayList<>();
 	
-	public Instrutor(String nome,String dataNascimento, String genero,String ntelemovel,ArrayList<Especialidade> listaEspecialidade) {
+	public Instrutor(String nome,LocalDate dataNascimento, String genero,String ntelemovel,ArrayList<Especialidade> listaEspecialidade) {
 		super(nome,dataNascimento,genero);
 		setContacto(ntelemovel);
 		if(listaEspecialidade.size()>=4)

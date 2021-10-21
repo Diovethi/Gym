@@ -1,17 +1,18 @@
+import java.time.LocalDate;
 
 public class Pessoa {
 	private String nome;
-	private String dataNascimento;
+	private LocalDate dataNascimento;
 	private String genero;
 	private String contacto;
 	
-	public Pessoa(String nome, String dataNascimento, String genero,String contacto) {
+	public Pessoa(String nome, LocalDate dataNascimento, String genero,String contacto) {
 		setNome(nome);
 		setDataNascimento(dataNascimento);
 		setGenero(genero);
 		setContacto(contacto);
 	}
-	public Pessoa(String nome, String dataNascimento, String genero) {
+	public Pessoa(String nome, LocalDate dataNascimento, String genero) {
 		setNome(nome);
 		setDataNascimento(dataNascimento);
 		setGenero(genero);
@@ -22,10 +23,10 @@ public class Pessoa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(String dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	public String getGenero() {
@@ -41,7 +42,7 @@ public class Pessoa {
 		if(validate(contacto))
 			this.contacto = contacto;
 		else
-			throw new IllegalArgumentException("Email do "+getNome()+" está incorrecto!");
+			throw new IllegalArgumentException("Email do "+getNome()+" estï¿½ incorrecto!");
 	}
 	private boolean validate(String contacto) {
 		if(contacto.contains("@") && contacto.substring((contacto.length()-4)).contains(".com")|| contacto.substring((contacto.length()-4)).contains(".pt"))
