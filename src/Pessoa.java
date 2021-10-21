@@ -42,12 +42,10 @@ public class Pessoa {
 		if(validate(contacto))
 			this.contacto = contacto;
 		else
-			throw new IllegalArgumentException("Email do "+getNome()+" est� incorrecto!");
+			throw new IllegalArgumentException("Email do "+getNome()+" está incorrecto!");
 	}
 	private boolean validate(String contacto) {
-		if(contacto.contains("@") && contacto.substring((contacto.length()-4)).contains(".com")|| contacto.substring((contacto.length()-4)).contains(".pt"))
-			return true;
-		else
-			return false;
+			return (contacto.contains("@") && contacto.substring((contacto.length()-4)).contains(".com") ||
+					 contacto.substring((contacto.length()-4)).contains(".pt"));
 	}
 }

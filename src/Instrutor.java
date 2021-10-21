@@ -11,7 +11,6 @@ public class Instrutor extends Pessoa {
 		setContacto(ntelemovel);
 		if(listaEspecialidade.size()>=4)
 			setListaEspecialidade(listaEspecialidade);
-			
 	}
 
 	@Override
@@ -21,17 +20,23 @@ public class Instrutor extends Pessoa {
 
 	@Override
 	public void setContacto(String ntelemovel) {
-		this.nTelemovel = ntelemovel;
-
+			if(validate(ntelemovel))
+				this.nTelemovel = ntelemovel;
+			else
+				throw new IllegalArgumentException("O número de "+getNome()+" não está correto!");
 	}
 
-	
+	private boolean validate(String ntelemovel) {
+		try{
+			Integer.parseInt(ntelemovel);
+		}catch(NumberFormatException e){
+			throw new IllegalArgumentException("O número de "+getNome()+" está inválido!");
+		}
+		return ntelemovel.substring(0).contains("9") && ntelemovel.length()==9 ;
+	}
+
 	public void setListaEspecialidade(ArrayList<Especialidade> listaEsp) {
 		this.listaEspecialidade=listaEsp;
-	}
-	
-	public void addListaEspecialidade(ArrayList<Especialidade> listaEspecialidade) {
-		listaEspecialidade.addAll(listaEspecialidade);
 	}
 	
 	public ArrayList<Especialidade> getListaEspecialidade(){

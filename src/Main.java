@@ -21,11 +21,9 @@ public class Main {
 			clienteLista.add(new Cliente("Roberta",LocalDate.parse("1958-10-23"),"Feminino","Roberta@joka.com", espLista.get(2)));
 			clienteLista.add(new Cliente("Joao",LocalDate.parse("1978-05-13"),"Masculino","teste@teste.com", espLista.get(0)));
 
-
 			Aula aulaMusculacao= new Aula(LocalDate.parse("2021-10-19"),LocalDate.parse("2021-10-19"),LocalTime.parse( "14:30:00"), espLista.get(1), inst1, clienteLista,4 );
 			
-
-			System.out.println("Hora de incio da aula: "+aulaMusculacao.getHoraInicio()+" e a hora de fim: "+(aulaMusculacao.getHoraInicio().plusNanos(aulaMusculacao.getEspecialidade().getDuracao().toNanoOfDay()) ));
+			System.out.println("Hora de incio da aula: "+aulaMusculacao.getHoraInicio()+" e a hora de fim: "+aulaMusculacao.getHoraFim());
 			System.out.println(aulaMusculacao.getListaCliente()+" \n "+aulaMusculacao.getInstrutor().getDataNascimento()+" "+aulaMusculacao.getListaCliente().size());
 
 			
