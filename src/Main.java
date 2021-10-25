@@ -15,13 +15,13 @@ public class Main {
 
 			Instrutor inst1= new Instrutor("Roberta",LocalDate.parse("1989-10-26"),"Femenino","936191001",espLista);
 
-			ArrayList<Cliente> clienteLista= new ArrayList<Cliente>();
-			clienteLista.add(new Cliente("Joao",LocalDate.parse("1978-05-13"),"Masculino","teste@teste.com", espLista.get(1)));
-			clienteLista.add(new Cliente("Rodolfo",LocalDate.parse("1998-05-03"),"Masculino","rodolfo@joka.pt", espLista.get(3)));
-			clienteLista.add(new Cliente("Roberta",LocalDate.parse("1958-10-23"),"Feminino","Roberta@joka.com", espLista.get(2)));
-			clienteLista.add(new Cliente("Joao",LocalDate.parse("1978-05-13"),"Masculino","teste@teste.com", espLista.get(0)));
+			
+			Cliente c1= new Cliente("Joao",LocalDate.parse("1978-05-13"),"Masculino","teste@teste.com", espLista.get(1));
+			Cliente c2=new Cliente("Rodolfo",LocalDate.parse("1998-05-03"),"Masculino","rodolfo@joka.pt", espLista.get(3));
+			Cliente c3=new Cliente("Roberta",LocalDate.parse("1958-10-23"),"Feminino","Roberta@joka.com", espLista.get(2));
+			Cliente c4=new Cliente("Joao",LocalDate.parse("1978-05-13"),"Masculino","teste@teste.com", espLista.get(0));
 
-			Aula aulaMusculacao= new Aula(LocalDate.parse("2021-10-19"),LocalDate.parse("2021-10-19"),LocalTime.parse( "14:30:00"), espLista.get(1), inst1, clienteLista,4 );
+			Aula aulaMusculacao= new Aula(LocalDate.parse("2021-10-19"),LocalDate.parse("2021-10-19"),LocalTime.parse( "14:30:00"), espLista.get(1), inst1,4 );
 			
 			System.out.println("Hora de incio da aula: "+aulaMusculacao.getHoraInicio()+" e a hora de fim: "+aulaMusculacao.getHoraFim());
 			System.out.println(aulaMusculacao.getListaCliente()+" \n "+aulaMusculacao.getInstrutor().getDataNascimento()+" "+aulaMusculacao.getListaCliente().size());
