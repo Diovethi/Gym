@@ -24,7 +24,7 @@ public class Main {
 			Aula aulaMusculacao= new Aula(LocalDate.parse("2021-10-19"),LocalDate.parse("2021-10-19"),LocalTime.parse( "14:30:00"), espLista.get(1), inst1,4 );
 			
 			System.out.println("Hora de incio da aula: "+aulaMusculacao.getHoraInicio()+" e a hora de fim: "+aulaMusculacao.getHoraFim());
-			System.out.println(aulaMusculacao.getListaCliente()+" \n "+aulaMusculacao.getInstrutor().getDataNascimento()+" "+aulaMusculacao.getListaCliente().size());
+			System.out.println(aulaMusculacao+" \n "+aulaMusculacao.getInstrutor());
 
 			
 		}catch(IllegalArgumentException ie) {
