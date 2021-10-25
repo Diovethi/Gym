@@ -1,0 +1,24 @@
+	public Aula (LocalDate dataInicio,LocalDate dataFim,LocalTime horaInicio,Especialidade esp, Instrutor inst, ArrayList<Cliente> listaclientes,int nMaxCliente) {
+		if(!isMorethanMaxClients(nMaxCliente , listaclientes)){
+			setDataInicio(dataInicio);
+			setDataFim(dataFim);
+			setEspecialidade(esp);
+			setInstrutor(inst);
+			setListaCliente(listaclientes);
+			setHoraInicio(horaInicio);
+		}
+		else
+			throw new IllegalArgumentException("Está a ser inserido demasiados clientes para a capacidade máxima da aula");
+	}
+
+	private boolean isMorethanMaxClients(int nMaxCliente, ArrayList<Cliente> listaclientes){
+		return (listaclientes.size() > nMaxCliente );
+	}
+
+
+	public void setListaCliente(ArrayList<Cliente> listacliente) {
+		if(isMorethanMaxClients(this.nMaxCliente,listacliente))
+			this.listacliente = listacliente;
+		else
+			throw new IllegalArgumentException("Está a ser inserido demasiados clientes para a capacidade máxima da aula");
+	}
